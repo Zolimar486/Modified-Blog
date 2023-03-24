@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose= require('mongoose')
 const dotenv= require('dotenv')
 const cors = require('cors')
+const path = require("path")
 const authRouter = require("../Api/routers/auth")
 const userRouter = require('../Api/routers/user')
 const postRouter = require('../Api/routers/post')
@@ -19,6 +20,7 @@ mongoose.connect(process.env.MONGO_URL)
 
 app.use(express.json({limit:'50mb'}))
 app.use(express.urlencoded({extended: true, limit:'50mb'}))
+app.use(express.static(path.join(__dirname, 'build')));
 app.use(cors())
 app.use('*', cors())
 app.get('/', async(req,res) => {

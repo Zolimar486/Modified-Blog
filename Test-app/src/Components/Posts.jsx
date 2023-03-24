@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import Post from './Post'
 
+
 const Container = styled.div`
 grid-area: main;
 margin:0px auto;

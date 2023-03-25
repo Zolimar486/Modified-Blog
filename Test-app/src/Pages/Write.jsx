@@ -128,7 +128,7 @@ export default function Write(){
                 photo: image,
             })
 
-           window.location.replace('/single/' + res.data._id)
+           window.location.replace('/')
 
         }catch(err){
             console.log(err)

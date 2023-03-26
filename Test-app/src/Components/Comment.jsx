@@ -82,7 +82,11 @@ export default function Comment(){
         }
    
          
-        getData()
+        const timer = setTimeout(()=> {
+            getData()
+         },200)
+ 
+         return ()=> clearTimeout(timer)
        
    
        },[fetchPost])

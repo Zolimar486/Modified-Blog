@@ -14,6 +14,7 @@ max-width:400px;
     margin:0px;
     max-width:100%;
     display:flex;
+    padding:20px;
 }
 `
 
@@ -54,8 +55,8 @@ margin-top:10px;
 `
 
 const Image = styled.img`
-width:40px;
-height:40px;
+width:70px;
+height:70px;
 border-radius:10px;
 object-fit:over;
 `
@@ -112,14 +113,7 @@ color:green;
 const Message = styled.div`
 margin-top:10px;
 `
-const Delete = styled.button`
-border:none;
-border-radius:8px;
-padding:.4rem  1.3rem;
-background-color:lightCoral;
-color:white;
-cursor:pointer;
-`
+
 
 export default function Settings(){
 
@@ -178,25 +172,15 @@ export default function Settings(){
        }
     }
 
-    const handleDelete = async()=> {
-       try{
-
-         await publicRequest.delete(`/users/${user._id}`, {
-            data :{userId: user._id}
-         })
-         
-         window.location.replace('/')
-       }catch(err){
-        console.log(err)
-       }
-    }
+    
+    
 
     return(
         <Container>
            <Wrapper>
             <Section>
                 <Span>Update your Account</Span>
-                <Delete onClick = {handleDelete}>Delete your Account</Delete>
+                
             </Section>
 
             <Form onSubmit={handleSubmit}>
@@ -206,7 +190,7 @@ export default function Settings(){
                      :(
                         <Image src={user.profilePic.url}/>
                      )}
-                    <Label htmlFor="file">
+                    <Label htmlFor="file" style={{cursor:"pointer"}}>
                     <BiCloudUpload/>
                     </Label>
                     <Input type="file" id="file" style={{display:"none"}} onChange={handleUpload}/>

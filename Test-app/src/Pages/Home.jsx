@@ -73,7 +73,12 @@ export default function Home(){
             }
         }
 
-        getPost()
+        const timer = setTimeout(()=> {
+            getPost()
+         },100)
+ 
+         return ()=> clearTimeout(timer)
+
     },[search])
 
     return(

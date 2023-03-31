@@ -7,10 +7,8 @@ import profile from '../Assets/profile.jpg'
 const Container = styled.div`
 grid-area: side;
 background-color:#fbfbfb;
-font-family:"Varela", sans-serif;
 display:flex;
 align-items:center;
-
 flex-direction:column;
 margin:10px auto;
 max-width:350px;

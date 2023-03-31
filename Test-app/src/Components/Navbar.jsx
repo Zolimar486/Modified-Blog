@@ -20,6 +20,14 @@ justify-content:space-between;
 align-items:center;
 font-family: 'Varela', sans-serif;
 font-size:17px;
+z-index:999;
+
+@media only screen and (min-width:768px){
+    overflow:hidden;
+    position:fixed;
+    top:0px;
+
+}
 `
 
 const Left = styled.div`
